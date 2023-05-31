@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "bewise-task-2"
+version = "1.0.0"
+description = "Bewise task 2"
+authors = ["hecronk <damiraminov1@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^2.3.2"
+flask-migrate = "^4.0.4"
+flask-marshmallow = "^0.15.0"
+marshmallow-sqlalchemy = "^0.29.0"
+requests = "^2.31.0"
+python-dotenv = "^1.0.0"
+psycopg2-binary = "^2.9.6"
+sqlalchemy-utils = "^0.41.1"
+pyffmpeg = "^2.4.2.18"
+pydub = "^0.25.1"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+setuptools = "^67.8.0"
+black = "^23.3.0"
+
+[tool.poetry.group.production]
+optional = true
+
+[tool.poetry.group.production.dependencies]
+gunicorn = "^20.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
