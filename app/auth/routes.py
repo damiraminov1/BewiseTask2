@@ -15,12 +15,11 @@ from app.auth import bp
 )
 def register():
     user_data: dict = json.loads(request.data.decode("utf-8"))
-    try:
-        name: str = user_data["username"]
-    except KeyError:
-        return {"error": "Value Error"}, 400
+    username: str = user_data.get("username")
+    if not username:
+        return {"message": "No username provided."}, 400
     user = User(
-        name=name,
+        name=username,
     )
     db.session.add(user)
     db.session.commit()

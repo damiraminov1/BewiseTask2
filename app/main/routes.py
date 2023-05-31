@@ -55,7 +55,7 @@ def download_music():
         .one_or_none()
     )
     if not record:
-        return {"message": "Not valid record id or user id provided."}
+        return {"message": "Not valid record id or user id provided."}, 401
     return (
         send_file(
             io.BytesIO(record.data),
